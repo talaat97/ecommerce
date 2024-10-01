@@ -12,11 +12,11 @@ class HomePage extends StatelessWidget {
     HomeControllerImp controller = Get.put(HomeControllerImp());
     return Scaffold(
       body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: ListView(
           children: [
             Container(
               margin: const EdgeInsets.only(top: 10),
-              padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Row(children: [
                 Expanded(
                     child: TextFormField(
@@ -26,17 +26,17 @@ class HomePage extends StatelessWidget {
                       hintStyle: const TextStyle(fontSize: 18),
                       border: OutlineInputBorder(
                           borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(10)),
+                          borderRadius: BorderRadius.circular(15)),
                       filled: true,
                       fillColor: Colors.grey[200]),
                 )),
                 const SizedBox(width: 10),
                 Container(
+                  height: 70,
                   decoration: BoxDecoration(
                       color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(10)),
+                      borderRadius: BorderRadius.circular(15)),
                   width: 60,
-                  padding: const EdgeInsets.symmetric(vertical: 8),
                   child: IconButton(
                       onPressed: () {},
                       icon: Icon(
@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
               ]),
             ),
             Container(
-              margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              margin: const EdgeInsets.symmetric(vertical: 15),
               child: Stack(children: [
                 Container(
                   alignment: Alignment.center,
@@ -77,98 +77,24 @@ class HomePage extends StatelessWidget {
               ]),
             ),
             Container(
-              margin: const EdgeInsets.only(left: 20),
               alignment: Alignment.topLeft,
-              child: Container(
-                child: Text(
-                  'Category',
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge!
-                      .copyWith(color: Colors.grey[600]),
-                ),
+              child: Text(
+                'Category',
+                style: Theme.of(context)
+                    .textTheme
+                    .titleLarge!
+                    .copyWith(color: Colors.grey[600]),
               ),
             ),
             Container(
               margin: const EdgeInsets.all(5),
               height: 120,
-              child: ListView(
+              child: ListView.builder(
+                
+                itemBuilder: (context, index) => ,
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 scrollDirection: Axis.horizontal,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(left: 10),
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(30)),
-                    child: const Icon(
-                      size: 45,
-                      Icons.local_mall_outlined,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 10),
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(30)),
-                    child: const Icon(
-                      size: 45,
-                      Icons.store_mall_directory_outlined,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 10),
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(30)),
-                    child: const Icon(
-                      size: 45,
-                      Icons.weekend_sharp,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 10),
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                        color:  Colors.grey[200],
-                        borderRadius: BorderRadius.circular(30)),
-                    child: const Icon(
-                      size: 45,
-                      Icons.wrap_text_rounded,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 10),
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                        color:  Colors.grey[200],
-                        borderRadius: BorderRadius.circular(30)),
-                    child: const Icon(
-                      size: 45,
-                      Icons.aspect_ratio_rounded,
-                      color: Colors.black,
-                    ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 10),
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    decoration: BoxDecoration(
-                        color: Colors.grey[200],
-                        borderRadius: BorderRadius.circular(30)),
-                    child: const Icon(
-                      size: 45,
-                      Icons.sd_card_alert_outlined,
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
+               
               ),
             )
           ],

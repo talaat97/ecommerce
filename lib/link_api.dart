@@ -7,7 +7,8 @@ class Applink {
   static const String verfiyCodeSignUp = '$server/Auth/verfiycode.php';
   //============================================ forget passwrod ============================================//
   static const String checkEmailLink = '$server/forget_password/checkEmail.php';
-  static const String verfiyCodeCheckEmailLink = '$server/forget_password/verfiyCode.php';
-  static const String reseetPasswordLink =
-      '$server/forget_password/resetPasswrod.php';
+  static const String verfiyCodeCheckEmailLink ='$server/forget_password/verfiyCode.php';
+  static const String reseetPasswordLink = '$server/forget_password/resetPasswrod.php';
+  //============================================ Home ============================================//
+  static const String homeLink = '$server/home.php';
 }

@@ -39,7 +39,7 @@ class LogeinControllerImp extends LogeinCotroller {
       if (StatusRequest.sucess == statusRequest) {
         if (response['status'] == "success") {
           myServices.sharedPreferences.setString('id', response['data']['user_id']);
-          myServices.sharedPreferences.setString('name', response['data']['user_name']);
+          myServices.sharedPreferences.setString('username', response['data']['user_name']);
           myServices.sharedPreferences.setString('email', response['data']['user_email']);
           myServices.sharedPreferences.setString('phone', response['data']['user_phone']);
           myServices.sharedPreferences.setString('step', '2');
