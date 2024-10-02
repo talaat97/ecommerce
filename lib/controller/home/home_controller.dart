@@ -15,6 +15,7 @@ class HomeControllerImp extends HomeController {
   StatusRequest statusRequest = StatusRequest.loading;
   MyServices myServices = Get.find();
   List categories = [];
+  List iteams = [];
   String? username;
   String? id;
 
@@ -41,6 +42,7 @@ class HomeControllerImp extends HomeController {
     if (StatusRequest.sucess == statusRequest) {
       if (response['status'] == 'success') {
         categories.addAll(response['categories']);
+        iteams.addAll(response['iteams']);
       } else {
         statusRequest = StatusRequest.failure;
       }

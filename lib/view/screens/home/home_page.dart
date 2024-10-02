@@ -1,105 +1,51 @@
+import 'package:e_comerse_app/core/function/handling_data.dart';
+import 'package:e_comerse_app/view/widgets/home/CustomCardHome.dart';
+import 'package:e_comerse_app/view/widgets/home/CustomTitleItmeams.dart';
+import 'package:e_comerse_app/view/widgets/home/ListIteams.dart';
+import 'package:e_comerse_app/view/widgets/home/customAppbar.dart';
+import 'package:e_comerse_app/view/widgets/home/listCategories.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../../controller/home/home_controller.dart';
 import '../../../core/constant/colors.dart';
+import '../../../link_api.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    HomeControllerImp controller = Get.put(HomeControllerImp());
+    Get.put(HomeControllerImp());
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: ListView(
-          children: [
-            Container(
-              margin: const EdgeInsets.only(top: 10),
-              child: Row(children: [
-                Expanded(
-                    child: TextFormField(
-                  decoration: InputDecoration(
-                      prefixIcon: const Icon(Icons.search),
-                      hintText: "Find Product",
-                      hintStyle: const TextStyle(fontSize: 18),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.circular(15)),
-                      filled: true,
-                      fillColor: Colors.grey[200]),
-                )),
-                const SizedBox(width: 10),
-                Container(
-                  height: 70,
-                  decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(15)),
-                  width: 60,
-                  child: IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.notifications_active_outlined,
-                        size: 30,
-                        color: Colors.grey[600],
-                      )),
-                )
-              ]),
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 15),
-              child: Stack(children: [
-                Container(
-                  alignment: Alignment.center,
-                  height: 150,
-                  decoration: BoxDecoration(
-                      color: AppColor.primarytColor,
-                      borderRadius: BorderRadius.circular(20)),
-                  child: const ListTile(
-                    title: Text("A summer surprise",
-                        style: TextStyle(color: Colors.white, fontSize: 20)),
-                    subtitle: Text("Cashback 20%",
-                        style: TextStyle(color: Colors.white, fontSize: 30)),
+      body: GetBuilder<HomeControllerImp>(
+          builder: (controller) => HandlingData(
+                statusRequest: controller.statusRequest,
+                widget: Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: ListView(
+                    children: [
+                      CustomAppbar(
+                        title: 'find product',
+                        onPreesedIcon: () {},
+                        onPreesedSearch: () {},
+                      ),
+                      const Customcardhome(
+                          title: 'A simmer offre ', body: "Cashback 20 %"),
+                      const Listcategories(),
+                      const Customtitleitmeams(
+                        title: 'Best sailer',
+                      ),
+                      const Listiteams(),
+                      const Customtitleitmeams(
+                        title: 'Offer',
+                      ),
+                      const Listiteams(),
+                    ],
                   ),
                 ),
-                Positioned(
-                  top: -20,
-                  right: -20,
-                  child: Container(
-                    height: 160,
-                    width: 160,
-                    decoration: BoxDecoration(
-                        color: AppColor.grey,
-                        borderRadius: BorderRadius.circular(160)),
-                  ),
-                )
-              ]),
-            ),
-            Container(
-              alignment: Alignment.topLeft,
-              child: Text(
-                'Category',
-                style: Theme.of(context)
-                    .textTheme
-                    .titleLarge!
-                    .copyWith(color: Colors.grey[600]),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.all(5),
-              height: 120,
-              child: ListView.builder(
-                
-                itemBuilder: (context, index) => ,
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                scrollDirection: Axis.horizontal,
-               
-              ),
-            )
-          ],
-        ),
-      ),
+              )),
     );
   }
 }
