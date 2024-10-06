@@ -6,6 +6,8 @@ import 'package:e_comerse_app/view/screens/auth/forget%20Password/reset_password
 import 'package:e_comerse_app/view/screens/auth/forget%20Password/success_reset_password.dart';
 import 'package:e_comerse_app/view/screens/choose_lang.dart';
 import 'package:e_comerse_app/view/screens/home/home_page.dart';
+import 'package:e_comerse_app/view/screens/home/iteams_page.dart';
+import 'package:e_comerse_app/view/widgets/home/ListIteams.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
 import 'view/screens/auth/forget Password/verfiy_code_check_email.dart';
@@ -13,6 +15,7 @@ import 'view/screens/auth/success_sign_up.dart';
 import 'view/screens/auth/verfiy_code_signup.dart';
 import 'view/screens/on_boarding_screen.dart';
 import 'view/screens/auth/login.dart';
+import 'view/widgets/home/homescreen.dart';
 
 List<GetPage<dynamic>>? routes = [
   GetPage(name: "/", page: () => const Language(), middlewares: [
@@ -37,5 +40,6 @@ List<GetPage<dynamic>>? routes = [
       name: AppRoute.verfiyCodeCheckEmail,
       page: () => const VerfiyCodeCheckEmail()),
 //////////////////////////////////Home //////////////////////
-  GetPage(name: AppRoute.home, page: () => const HomePage()),
+  GetPage(name: AppRoute.home, page: () => const Homescreen()),
+  GetPage(name: AppRoute.items, page: () => const ItemsScreen()),
 ];

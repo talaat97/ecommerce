@@ -43,7 +43,17 @@ class MyTranslation extends Translations {
           "35": "الكلمة الجديدة",
           "36": "تم اعادة تعيين كلمة المرور بنجاح",
           "37": "تهانينا",
-          "38": "تم التسجيل بنجاح"
+          "38": "تم التسجيل بنجاح",
+          "39": "بحث",
+          "40": "عروض الفصل",
+          "41": "خصم يصل 20%",
+          "42": "الاصناف",
+          "43": "الاكثر مبيعا",
+          "44": "عروض اليوم",
+          "45": "منزل",
+          "46": "ملفي",
+          "47": "مفضلة",
+          "48": "اقسام",
         },
         "en": {
           "1": "Choose Language...",
@@ -87,7 +97,17 @@ class MyTranslation extends Translations {
           "35": "New Password",
           "36": "Password has been reset successfully",
           "37": "congratulations",
-          "38": "successfully registered"
+          "38": "successfully registered",
+          "39": "find product",
+          "40": "Simmer offer",
+          "41": "CashBack 20%",
+          "42": "Categories",
+          "43": "Best Sailer",
+          "44": "Offers ",
+          "45": "home",
+          "46": "profile",
+          "47": "favorite",
+          "48": "categories",
         }
       };
 }
