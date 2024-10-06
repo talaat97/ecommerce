@@ -19,18 +19,19 @@ class CustomAppbar extends StatelessWidget {
       margin: const EdgeInsets.only(top: 10),
       child: Row(children: [
         Expanded(
-            child: TextFormField(
-          decoration: InputDecoration(
-              prefixIcon: IconButton(
-                  onPressed: onPreesedSearch, icon: const Icon(Icons.search)),
-              hintText: title,
-              hintStyle: const TextStyle(fontSize: 18),
-              border: OutlineInputBorder(
-                  borderSide: BorderSide.none,
-                  borderRadius: BorderRadius.circular(15)),
-              filled: true,
-              fillColor: AppColor.grey200),
-        )),
+          child: TextFormField(
+            decoration: InputDecoration(
+                prefixIcon: IconButton(
+                    onPressed: onPreesedSearch, icon: const Icon(Icons.search)),
+                hintText: title,
+                hintStyle: const TextStyle(fontSize: 18),
+                border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(15)),
+                filled: true,
+                fillColor: AppColor.grey200),
+          ),
+        ),
         const SizedBox(width: 10),
         Container(
           height: 70,

@@ -1,3 +1,4 @@
+import 'package:e_comerse_app/core/constant/routs_page.dart';
 import 'package:e_comerse_app/core/services/services.dart';
 import 'package:e_comerse_app/data/datasourse/remote/home/home_data.dart';
 import 'package:get/get.dart';
@@ -8,6 +9,7 @@ import '../../core/function/handling_data_controller.dart';
 abstract class HomeController extends GetxController {
   initialData();
   getData();
+  goToItems(List categories, int selectedCat, String catName);
 }
 
 class HomeControllerImp extends HomeController {
@@ -18,7 +20,7 @@ class HomeControllerImp extends HomeController {
   List iteams = [];
   String? username;
   String? id;
-
+  String? lang;
   @override
   void onInit() {
     getData();
@@ -28,6 +30,7 @@ class HomeControllerImp extends HomeController {
 
   @override
   initialData() {
+    lang = myServices.sharedPreferences.getString('lang');
     username = myServices.sharedPreferences.getString('username');
     id = myServices.sharedPreferences.getString('id');
   }
@@ -48,5 +51,14 @@ class HomeControllerImp extends HomeController {
       }
     }
     update();
+  }
+
+  @override
+  goToItems(categories, selectedCat, catName) {
+    Get.toNamed(AppRoute.items, arguments: {
+      'categories': categories,
+      'selectedCat': selectedCat,
+      'catName': catName,
+    });
   }
 }
